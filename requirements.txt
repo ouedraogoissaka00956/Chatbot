@@ -1,1 +1,10 @@
-Flask tensorflow scikit-learn pandas nltk numpy gunicorn numpy os re unicodedata 
+Flask 
+tensorflow 
+scikit-learn 
+pandas 
+nltk 
+numpy 
+gunicorn 
+os 
+re 
+unicodedata 
