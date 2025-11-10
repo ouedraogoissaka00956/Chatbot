@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Performance du modèle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='performance.css') }}">
+</head>
+<body class="bg-light text-center p-5">
+    <div class="container">
+        <h1 class="mb-4">Performance du modèle</h1>
+
+        <div class="card mx-auto shadow-sm" style="max-width:400px;">
+            <div class="card-body">
+                <p><strong>Accuracy :</strong> {{ accuracy }}%</p>
+                <p><strong>Recall :</strong> {{ recall }}%</p>
+                <p><strong>F1-score :</strong> {{ f1 }}%</p>
+            </div>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="btn btn-primary mt-4">Retour au chatbot</a>
+    </div>
+</body>
+</html>

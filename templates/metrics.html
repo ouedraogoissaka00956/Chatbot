@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Logs d'entraînement du modèle</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='metrics.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Historique d'entraînement du modèle</h1>
+
+        {% if table %}
+        <div class="table-container">
+            {{ table | safe }}
+        </div>
+        {% else %}
+        <p class="no-data">Aucun log d'entraînement trouvé.</p>
+        {% endif %}
+
+        <a href="{{ url_for('index') }}" class="btn">Retour au chatbot</a>
+    </div>
+</body>
+</html>

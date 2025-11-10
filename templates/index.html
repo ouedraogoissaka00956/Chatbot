@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Santé Maternité</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <img src="{{ url_for('static', filename='femme.png') }}" alt="Logo" class="logo">
+            <h1>Chatbot Santé Maternité</h1>
+            <p>Accompagnement pour les femmes enceintes</p>
+        </div>
+
+        <div class="chat-box" id="chat-box">
+            {% for msg in conversation %}
+                <div class="message user">
+                    <div class="bubble user-bubble">{{ msg.user }}</div>
+                </div>
+
+                <div class="message bot">
+                    <img src="{{ url_for('static', filename='chatbot.png') }}" alt="Bot" class="bot-avatar">
+                    <div class="bubble bot-bubble">{{ msg.bot }}</div>
+                    <small class="meta">confiance : {{ msg.score }} ({{ msg.source }})</small>
+                </div>
+            {% endfor %}
+        </div>
+
+        <form method="POST" class="input-area">
+            <input type="text" name="input" placeholder="Écris ta question ici..." required autocomplete="off">
+            <button type="submit">Envoyer</button>
+        </form>
+
+        <div class="buttons">
+            <a href="{{ url_for('reset') }}" class="reset-btn"> Nouvelle conversation</a>
+            <a href="{{ url_for('metrics') }}" class="perf-btn">Voir les métriques du modèle</a>
+            <a href="{{ url_for('performance') }}" class="perf-btn"> Voir la performance du modèle</a>
+        </div>
+    </div>
+
+    <script>
+        const chatBox = document.getElementById('chat-box');
+        chatBox.scrollTop = chatBox.scrollHeight;
+    </script>
+</body>
+</html>

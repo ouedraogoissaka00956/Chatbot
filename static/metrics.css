@@ -1,0 +1,102 @@
+:root {
+    --vert-principal: #86a391;
+    --vert-clair: #a9bfae;
+    --beige-fond: #f7f5f2;
+    --gris-text: #444;
+    --blanc: #ffffff;
+}
+
+/* Style général */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--beige-fond);
+    color: var(--gris-text);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+/* Conteneur principal */
+.container {
+    background: var(--blanc);
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    width: 90%;
+    max-width: 900px;
+    padding: 30px 40px;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Titre */
+h1 {
+    color: var(--vert-principal);
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+/* Table stylisée */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 0.95em;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+}
+
+th {
+    background-color: var(--vert-principal);
+    color: var(--blanc);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: var(--vert-clair);
+    color: var(--blanc);
+}
+
+/* Message si aucun log */
+.no-data {
+    color: #777;
+    font-style: italic;
+}
+
+/* Bouton retour */
+.btn {
+    display: inline-block;
+    background-color: var(--vert-principal);
+    color: var(--blanc);
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--vert-clair);
+    transform: translateY(-2px);
+}
+
+/* Animation douce */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
